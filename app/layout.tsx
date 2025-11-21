@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SiteHeader from "@/components/site-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Blue Harbor",
-  description: "Launch or showcase your next big idea or discover latest shipped products that everyone's talking about",
+  description:
+    "Launch or showcase your next big idea or discover latest shipped products that everyone's talking about",
 };
 
 export default function RootLayout({
@@ -27,7 +29,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SiteHeader />
+        <div className="pt-20">{children}</div>
       </body>
     </html>
   );
