@@ -44,6 +44,7 @@ export default async function UserButton() {
             <AvatarImage
               src={session.user?.image || undefined}
               alt={session.user?.name || "User Avatar"}
+              referrerPolicy="no-referrer"
             />
             <AvatarFallback>{fallback}</AvatarFallback>
           </Avatar>
